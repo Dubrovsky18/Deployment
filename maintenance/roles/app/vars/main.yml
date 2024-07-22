@@ -1,0 +1,7 @@
+staytus_api_key: 9de0c7a8-acab-4959-8e3a-1a7ffa6917fd
+staytus_api_secret: YhwihiteAr4tKjClRGy6PwFFu3dgoH
+service_name: "web-application"  # Имя сервиса, для которого будем менять статус
+maintenance_status: "maintenance"  # Статус для обслуживания
+operational_status: "operational"
+staytus_url: http://{{ hostvars['server']['local_ip'] }}:8787/api/v1
+name: korl

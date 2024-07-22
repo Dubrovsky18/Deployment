@@ -1,0 +1,26 @@
+---
+- name: Check if Docker is installed
+  stat:
+    path: /usr/bin/docker
+  register: docker_installed
+
+- name: Ensure Docker is installed
+  shell: "curl -fsSL https://get.docker.com | sh"
+  when: docker_installed.stat.exists == false
+
+- name: Ensure Docker is started and enabled
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Copy Docker-compose
+  template:
+    src: docker-compose.yml
+    dest: /home/ec2-user/docker-compose.yml
+  tags: infra
+
+- name: deploy Docker Compose stack
+  command: docker compose up -d
+  args:
+    chdir: /home/ec2-user

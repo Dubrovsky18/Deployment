@@ -1,0 +1,12 @@
+- name: Deploy
+  hosts: server
+  roles:
+    - infra
+  tags: infra
+
+- name: Deploy
+  hosts: server
+  roles:
+    - app
+  tags: deploy
+  
