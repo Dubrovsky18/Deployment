@@ -3,5 +3,5 @@ staytus_api_secret: YhwihiteAr4tKjClRGy6PwFFu3dgoH
 service_name: "web-application"  # Имя сервиса, для которого будем менять статус
 maintenance_status: "maintenance"  # Статус для обслуживания
 operational_status: "operational"
-staytus_url: http://{{ hostvars['server']['local_ip'] }}:8787/api/v1
-name: korl
+server_staytus: 62.84.117.224
+staytus_url: http://{{ server_staytus }}:8787/api/v1

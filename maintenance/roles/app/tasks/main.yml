@@ -34,7 +34,7 @@
     state: started
     restart: true
     ports:
-      - "127.0.0.1:8090:8090/tcp"
+      - "8090:8090"
   become: true
   
 - name: Restore operational status on Staytus
